@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: youtube-telegram-bot
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    plan: free
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+    disk:
+      name: bot-storage
+      mountPath: /opt/render/project/src/downloads
+      sizeGB: 0.5
